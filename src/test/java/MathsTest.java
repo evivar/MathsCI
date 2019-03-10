@@ -52,7 +52,7 @@ public class MathsTest {
 		int result0 = maths.resta(a, b);
 		int result1_1 = maths.resta(c, a);
 		int result1_2 = maths.resta(d, c);
-		int result2 = maths.resta(b, d);
+		int result2 = maths.resta(d, b);
 
 		// Then
 		assertEquals(0, result0);
