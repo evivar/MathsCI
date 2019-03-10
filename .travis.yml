@@ -1,0 +1,32 @@
+# Damos los permisos de root, ya que Travis usa una VM Linux
+sudo: true
+
+# Establecemos el lenguaje de nuestra aplicación, en este caso Java
+language: java
+
+# Antes de hacer ninguna instalacion ejecutamos el/los siguientes comandos
+before_install:
+ # Cambia el modo del archivo gradlew a ejecucion
+ - chmod +x gradlew
+
+# Especificamos las JDK bajo las que queremos probar nuestros tests
+jdk:
+  - oraclejdk8
+  - openjdk8
+
+# Elegimos el/los scrpits a ejecutar
+script: 
+  # Ejecuta los tests que haya en la ruta src/test/java 
+  - gradle check
+
+# Configuramos, si queremos, las notificaciones y como queremos recibirlas
+notifications:
+ # En este caso elegimos por correo electrónico
+ email:
+   # Añadimos los destinatarios
+   recipients:
+     - evivar@ucm.es
+   # Cuando los tests se ejecutan correctamente, se nos notifica siempre
+   on_success: always
+   # Cuando los tests no se ejecutan correctamente, se nos notifica siempre
+   on_failure: always
