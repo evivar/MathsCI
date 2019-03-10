@@ -1,1 +1,1 @@
-# MathsCI
+[![Travis](https://secure.travis-ci.org/evivar/MathsCI.png)](http://travis-ci.org/evivar/MathsCI)
